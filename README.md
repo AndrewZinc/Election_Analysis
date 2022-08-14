@@ -60,3 +60,63 @@ The python script was successfully applied to the audit of this local congressio
 
 With some small changes, the script could be applied to city, town, or state elections. These changes would account for the scope and type of election to present the results with meaningful labels and outcomes.  For example, the CSV file might contain the results for a town mayoral election with results reported across different town precincts.
 
+```
+# 1: Create a county list and county votes dictionary.
+county_names = []
+county_votes = {}
+
+
+# 2: Track the largest county and county voter turnout.
+largest_turnout_county_name = ""
+largest_turnout = 0
+```
+These variable can be renamed to track data within precincts.
+
+```
+# 1: Create a list of precincts and precinct-votes dictionary.
+precinct_names = []
+precinct_votes = {}
+
+
+# 2: Track the largest precinct voter turnout.
+largest_turnout_precinct_name = ""
+largest_turnout = 0
+```
+
+Similar changes can be made to the main result processing loops to use the new variables and prepare the results report using the correct labelling for the election.
+
+```
+    # 6a: Write a for loop to get the county from the county dictionary.
+    for county_name in county_votes:
+        # 6b: Retrieve the county vote count.
+        county_vote = county_votes.get(county_name)
+```
+This loop could be updated to process the precinct data.
+
+```
+    # 6a: Write a for loop to get the precinct from the precinct dictionary.
+    for precinct_name in precinct_votes:
+        # 6b: Retrieve the precinct vote count.
+        precinct_vote = precinct_votes.get(precinct_name)
+```
+And finally, the reported output can be updated to present the results in a meaningful way.
+
+```
+    # 7: Print the county with the largest turnout to the terminal.
+    largest_turnout_results = (
+        f"-------------------------\n"
+        f"Largest County Turnout: {largest_turnout_county_name}\n"
+        f"-------------------------\n")
+```
+
+The report would contain labels indicating the precinct data.
+
+```
+    # 7: Print the precinct with the largest turnout to the terminal.
+    largest_turnout_results = (
+        f"-------------------------\n"
+        f"Largest Precinct Turnout: {largest_turnout_precinct_name}\n"
+        f"-------------------------\n")
+```
+
+

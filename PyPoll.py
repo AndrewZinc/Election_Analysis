@@ -3,16 +3,16 @@
 import csv
 import os
 
-# file_to_load = os.path.join('Resources', 'election_results.csv')
+file_to_load = os.path.join('Resources', 'election_results.csv')
 # Assign a variable for the import filehandle
-file_to_load = 'C:/Users/azinc/Github/Election_Analysis/Resources/election_results.csv'
-# print(file_to_load)
+#file_to_load = 'C:/Users/azinc/Github/Election_Analysis/Resources/election_results.csv'
+print(file_to_load)
 
 # Assign a variable for the output filehandle
 file_to_save = 'C:/Users/azinc/Github/Election_Analysis/Analysis/election_analysis.txt'
 
 # Open a csv file
-# election_data = open(file_to_load,'r')
+election_data = open(file_to_load,'r')
 
 # Declare and initialize the vote accumulator
 total_votes = 0
